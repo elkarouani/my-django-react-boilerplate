@@ -42,14 +42,16 @@ class CustomDetail extends React.Component {
 				<Card title={this.state.article.title}>
 					<p>{this.state.article.content}</p>
 				</Card>
-				<CustomForm requestType="put" articleID={this.state.articleID} btnActionText="Update" />
-				<Button
-					htmlType="submit"
-					type="danger"
-					onClick={(event) => this.handleDelete(event, this.state.articleID)}
-				>
-					Delete
-				</Button>
+				<Card title={`Update Article [${this.state.article.title}]`}>
+					<CustomForm requestType="put" articleID={this.state.articleID} btnActionText="Update" />
+					<Button
+						htmlType="submit"
+						type="danger"
+						onClick={(event) => this.handleDelete(event, this.state.articleID)}
+					>
+						Delete
+					</Button>
+				</Card>
 			</div>
 		);
 	}
