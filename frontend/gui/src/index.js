@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 import reducer from './store/reducers/auth';
 import { createStore, compose, applyMiddleware } from 'redux';
-import { provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -14,9 +14,9 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
 
 const app = (
-	<provider store={store}>
+	<Provider store={store}>
 		<App />
-	</provider>
+	</Provider>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

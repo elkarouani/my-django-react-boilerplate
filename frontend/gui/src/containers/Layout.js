@@ -13,9 +13,15 @@ const CustomLayout = (props) => (
 				<Menu.Item key="1">
 					<Link to="/">Articles</Link>
 				</Menu.Item>
-				<Menu.Item key="2">
-					<Link to="/signin">Sign In</Link>
-				</Menu.Item>
+				{props.isAuthenticated ? (
+					<Menu.Item key="2">
+						<Link to="/signout">Sign Out</Link>
+					</Menu.Item>
+				) : (
+					<Menu.Item key="2">
+						<Link to="/signin">Sign In</Link>
+					</Menu.Item>
+				)}
 			</Menu>
 		</Header>
 		<Content style={{ padding: '0 50px' }}>
